@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Appointment Booking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=San+Francisco:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        body {
+            font-family: 'San Francisco', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            overflow-x: hidden;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background-image: url('Images\downloadfile-7.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(37, 30, 30, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 48px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+        }
+
+        .navigation {
+            margin-top: 70px;
+        }
+
+        .navigation a {
+            color: white;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px #999;
+            transition: all 0.3s;
+        }
+
+        .navigation a:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+
+        .responsive-image {
+            width: 100%;
+            height: 50vh;
+            background-image:url('downloadfile-7.jpg') no-repeat center center ;
+            background-size: cover;
+            position: relative;
+            opacity: 10;
+        }
+
+        .square-cylinder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 686px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 17px 17px rgba(0, 0, 0, 0.1);
+            border-radius: 31px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: slideInFromBottom 1.5s ease-in-out;
+        }
+
+        .square-cylinder p {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @keyframes slideInFromBottom {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .container-fluid {
+            padding: 20px;
+            text-align: center;
+            background-color: #E6F7FF;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container-fluid p {
+            font-size: 18px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section {
+            padding: 40px 20px;
+            background-color: #f0f8ff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .capsule {
+            display: inline-block;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            animation: capsulePopIn 2s ease-in-out;
+            position: relative;
+        }
+
+        @keyframes capsulePopIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .capsule::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 340px;
+            height: 340px;
+            background: url('https://your-background-image-url.jpg') no-repeat center center;
+            background-size: contain;
+            z-index: -1;
+        }
+
+        @keyframes rotateBackground {
+            from {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            to {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-overlay">
+            <h1>BESC MEDICAL COLLEGE</h1>"
+            <div class="navigation">
+                <a href="account_creation.html">Create Your Account</a>
+                <a href="contact_us.html">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="responsive-image">
+        <div class="square-cylinder">
+            <p><strong>Namaskar! Welcome to BESC MEDICAL COLLEGE. How can we help you?</strong></p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+    </div>
+
+    <div id="appointment" class="section">
+        <div class="capsule">
+            <h2>Book an Appointment</h2>
+            <form id="bookingForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="department">Select Department:</label>
+                <select id="department" name="department" required>
+                    <option value="general">General Medicine</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="gynecology">Gynecology</option>
+                    <option value="dermatology">Dermatology</option>
+                    <option value="psychiatry">Psychiatry</option>
+                    <option value="ophthalmology">Ophthalmology</option>
+                    <option value="ent">ENT (Ear, Nose, Throat)</option>
+                </select>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="problem">Tell us about your problem:</label>
+                <textarea id="problem" name="problem" rows="4" required></textarea>
+
+                <button type="submit">Book Now</button>
+            </form>
+            <div id="confirmation" class="hidden">
+                <h2>Appointment Confirmed</h2>
+                <p>Thank you for booking your appointment. We will contact you soon.</p>
+                <button id="newBooking">Book Another Appointment</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h4> This is a project work.</h4>
+    </div>
+    
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('bookingForm').classList.add('hidden');
+            document.getElementById('confirmation').classList.remove('hidden');
+        });
+
+        document.getElementById('newBooking').addEventListener('click', function() {
+            document.getElementById('confirmation').classList.add('hidden');
+            document.getElementById('bookingForm').classList.remove('hidden');
+            document.getElementById('bookingForm').reset();
+        });
+    </script>
+</body>
+</html>
